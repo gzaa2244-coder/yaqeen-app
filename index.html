@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة اليقين</title>
+<meta name="description" content="القرآن الكريم، مواقيت الصلاة، القبلة، الأذكار، واسأل نور">
+<meta name="theme-color" content="#151311">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="اليقين">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash">
+  <img src="icon-192.png" alt="">
+  <h1>منصة اليقين</h1>
+  <div class="dots"><span></span><span></span><span></span></div>
+  <p id="hint">لحظات ونفتح لك المنصة…</p>
+  <p id="tap" style="font-size:12px;opacity:.7">إذا طوّلت، اضغط على الشاشة</p>
+</div>
+
+<iframe id="app" title="منصة اليقين" allow="geolocation; microphone; clipboard-write; autoplay; fullscreen"></iframe>
+
+<button id="bell" aria-label="تفعيل التنبيهات">🔔 فعّل التنبيهات</button>
+
+<div id="install" role="dialog" aria-label="تثبيت التطبيق">
+  <img src="icon-192.png" alt="">
+  <div class="t" id="itext"><b>ثبّت تطبيق اليقين</b><br>يطلع لك أيقونة على الشاشة ويفتح مثل أي تطبيق.</div>
+  <button id="go">تثبيت</button>
+  <button id="x" aria-label="إغلاق">✕</button>
+</div>
+
+<script src="app.js"></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script src="push.js"></script>
+</body>
+</html>
