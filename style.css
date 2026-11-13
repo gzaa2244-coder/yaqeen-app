@@ -1,0 +1,26 @@
+  :root{ --bg:#151311; --card:#211e1a; --gold:#c9a45c; --gold-2:#f3dc9b; --text:#f2ecdf; --muted:#a9a293; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; height:100%; background:var(--bg); color:var(--text);
+    font-family:'Noto Kufi Arabic', system-ui, sans-serif; overflow:hidden; }
+  /* الإطار أطول من الشاشة بشوي عشان شريط Streamlit الأبيض اللي تحت ينخفي */
+  #app{ position:fixed; top:0; left:0; right:0; width:100%; height:calc(100% + 46px); border:0;
+    padding-top:env(safe-area-inset-top); background:var(--bg); }
+  #splash{ position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:18px; background:var(--bg); transition:opacity .5s; z-index:5; }
+  #splash img{ width:112px; height:112px; border-radius:26px; box-shadow:0 10px 40px rgba(201,164,92,.18); }
+  #splash h1{ margin:0; font-size:22px; font-weight:600; color:var(--gold-2); }
+  #splash p{ margin:0; font-size:13px; color:var(--muted); text-align:center; padding:0 24px; line-height:1.9; }
+  .dots{ display:flex; gap:6px; } .dots span{ width:7px; height:7px; border-radius:50%; background:var(--gold);
+    animation:b 1.2s infinite ease-in-out; } .dots span:nth-child(2){animation-delay:.15s} .dots span:nth-child(3){animation-delay:.3s}
+  @keyframes b{ 0%,80%,100%{ opacity:.25; transform:scale(.8) } 40%{ opacity:1; transform:scale(1) } }
+  #install{ position:fixed; left:16px; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); z-index:10;
+    background:var(--card); border:1px solid rgba(201,164,92,.35); border-radius:18px; padding:14px 16px;
+    display:none; align-items:center; gap:12px; box-shadow:0 12px 40px rgba(0,0,0,.45); max-width:520px; margin:0 auto; }
+  #install img{ width:44px; height:44px; border-radius:11px; flex:none; }
+  #install .t{ flex:1; font-size:13px; line-height:1.8; } #install b{ color:var(--gold-2); font-weight:600; }
+  #install button{ font:inherit; border:0; border-radius:12px; padding:9px 14px; cursor:pointer; }
+  #go{ background:var(--gold); color:#1d1a17; font-weight:600; } #x{ background:transparent; color:var(--muted); }
+  .share{ display:inline-block; width:15px; height:15px; vertical-align:-3px; }
+  #bell{ position:fixed; top:calc(12px + env(safe-area-inset-top)); left:12px; z-index:9; display:none;
+    font:inherit; font-size:12px; font-weight:600; border:1px solid rgba(201,164,92,.5); border-radius:999px;
+    padding:7px 12px; background:rgba(21,19,17,.92); color:var(--gold-2); cursor:pointer; }
