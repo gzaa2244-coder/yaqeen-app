@@ -1,0 +1,16 @@
+name: تنبيهات اليقين
+on:
+  schedule:
+    - cron: "7 21 * * *"   # 00:07 بتوقيت الرياض كل يوم
+  workflow_dispatch:
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/schedule_notifications.py
+        env:
+          ONESIGNAL_REST_KEY: ${{ secrets.ONESIGNAL_REST_KEY }}
